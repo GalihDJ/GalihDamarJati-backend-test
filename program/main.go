@@ -11,11 +11,17 @@ func main() {
 	for i := 1; i < input; i++ {
 		result := sumNumbers(i)
 		arrayNums = append(arrayNums, result)
-
-		fmt.Println(arrayNums)
 	}
 
-	//sum := 0
+	sum := 0
+
+	for i := 0; i <= input; i++ {
+		if i != arrayNums[i] {
+			sum += i
+		}
+	}
+
+	fmt.Println(sum)
 
 }
 
@@ -24,7 +30,6 @@ func sumNumbers(inputNumber int) int {
 	output := inputNumber
 
 	for inputNumber > 0 {
-		//fmt.Println(output)
 		output += inputNumber % 10
 		inputNumber /= 10
 	}
